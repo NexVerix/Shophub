@@ -133,6 +133,6 @@ GitHub: https://github.com/Time7874/Shophub.git
 
 ---
 
-## ⭐ Support
+## ⭐ Support 
 
 If you like this project, consider giving it a ⭐ on GitHub! 
