@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShopHub - Settings</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+font-family:Arial;
+background:url('img/bg_free.avif');
+background-size:cover;
+transition:0.3s;
+}
+
+body.dark{
+background:#121212;
+color:white;
+}
+
+header{
+background:#333;
+color:#fff;
+padding:1rem 2rem;
+display:flex;
+justify-content:space-between;
+}
+
+nav a{
+color:#fff;
+margin-left:1rem;
+text-decoration:none;
+position:relative;
+}
+
+nav a::after{
+content:"";
+position:absolute;
+bottom:-5px;
+left:0;
+width:0;
+height:2px;
+background:#28a745;
+transition:.3s;
+}
+
+nav a:hover::after{
+width:100%;
+}
+
+.container{
+max-width:500px;
+margin:2rem auto;
+background:#fff;
+padding:2rem;
+border-radius:8px;
+transition:0.3s;
+}
+
+body.dark .container{
+background:#1f1f1f;
+color:white;
+}
+
+label{
+display:block;
+margin-top:1rem;
+}
+
+select,input[type="checkbox"]{
+margin-top:5px;
+}
+
+button{
+margin-top:1rem;
+background:#28a745;
+color:#fff;
+border:none;
+padding:10px;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#218838;
+}
+
+.success{
+margin-top:1rem;
+color:#28a745;
+font-weight:bold;
+display:none;
+}
+
+footer{
+background:#222;
+color:#fff;
+padding:2rem;
+text-align:center;
+margin-top:2rem;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>ShopHub</h1>
+<nav>
+<a href="index.html">Home</a>
+<a href="shop.html">Shop</a>
+<a href="cart.html">Cart</a>
+<a href="account.html">Account</a>
+<a href="setting.html">Setting</a>
+<a href="service.html">Service</a>
+<a href="contact.html">Contact</a>
+</nav>
+</header>
+
+<div class="container">
+<h2>Settings</h2>
+
+<label>Theme:
+<select id="themeSelect">
+<option value="light">Light</option>
+<option value="dark">Dark</option>
+</select>
+</label>
+
+<label>
+<input type="checkbox" id="emailNotify"> Enable Email Notifications
+</label>
+
+<label>
+<input type="checkbox" id="smsNotify"> Enable SMS Alerts
+</label>
+
+<button onclick="saveSettings()">Save Settings</button>
+
+<div class="success" id="successMsg">
+Settings saved successfully!
+</div>
+
+</div>
+
+<footer>
+<p>&copy; 2025 ShopHub. All rights reserved.</p>
+</footer>
+
+<script>
+
+// Load saved settings when page opens
+window.onload = function() {
+const savedSettings = JSON.parse(localStorage.getItem("settings"));
+
+if(savedSettings){
+document.getElementById("themeSelect").value = savedSettings.theme;
+document.getElementById("emailNotify").checked = savedSettings.email;
+document.getElementById("smsNotify").checked = savedSettings.sms;
+
+if(savedSettings.theme === "dark"){
+document.body.classList.add("dark");
+}
+}
+};
+
+// Save settings
+function saveSettings(){
+
+const theme = document.getElementById("themeSelect").value;
+const email = document.getElementById("emailNotify").checked;
+const sms = document.getElementById("smsNotify").checked;
+
+const settings = {
+theme: theme,
+email: email,
+sms: sms
+};
+
+localStorage.setItem("settings", JSON.stringify(settings));
+
+// Apply theme immediately
+if(theme === "dark"){
+document.body.classList.add("dark");
+}else{
+document.body.classList.remove("dark");
+}
+
+// Show success message
+const msg = document.getElementById("successMsg");
+msg.style.display = "block";
+
+setTimeout(()=>{
+msg.style.display = "none";
+},2000);
+}
+
+</script>
+
+</body>
+</html>

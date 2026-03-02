@@ -1,0 +1,299 @@
+`
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopHub - E-commerce Platform</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background:
+                /* #f4f4f4;*/
+                url('img/bg_free.avif');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+
+        header {
+            background: #333;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+        }
+
+        nav a {
+            color: white;
+            margin-left: 1rem;
+            text-decoration: none;
+            position: relative;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background-color: #28a745;
+            transition: 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .container {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .container h2{
+            margin: 10px auto;
+        }
+
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .product {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            width: calc(33% - 20px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
+        }
+
+        .product img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .product h3 {
+            margin: 1rem 0 0.5rem;
+        }
+
+        .product p {
+            margin-bottom: 1rem;
+        }
+
+        .product button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .product button:hover {
+            background-color: #218838;
+        }
+
+        footer {
+            background: #222;
+            color: white;
+            padding: 2rem;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        footer .footer-col {
+            flex: 1;
+            padding: 1rem;
+        }
+
+        footer h4 {
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #28a745;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer ul li {
+            margin: 0.5rem 0;
+        }
+
+        footer ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer ul li a:hover {
+            color: #28a745;
+        }
+
+        footer p.copy {
+            text-align: center;
+            margin-top: 2rem;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .product {
+                width: 100%;
+            }
+
+            footer {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>ShopHub</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="cart.html">Cart</a>
+            <a href="account.html">Account</a>
+            <a href="setting.html">Setting</a>
+            <a href="service.html">Service</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Our Products</h2>
+        <div class="products" id="productList">
+            <!-- Products will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Blog</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Support</h4>
+            <ul>
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Follow Us</h4>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Instagram</a></li>
+            </ul>
+        </div>
+        <p class="copy">&copy; 2025 ShopHub. All rights reserved.</p>
+    </footer>
+<!-- 
+    <script>
+        const products = [
+            { id: 1, name: "Smart Watch", price: 99.99, image: "img/1.png", description: "Track fitness and time in style." },
+            { id: 2, name: "Bluetooth Headphones", price: 79.99, image: "img/2.jpg", description: "Crystal clear sound without wires." },
+            { id: 3, name: "Wireless Mouse", price: 24.99, image: "img/3.jpg", description: "Ergonomic and fast response." },
+            { id: 4, name: "Gaming Keyboard", price: 49.99, image: "img/4.webp", description: "RGB lighting and responsive keys." },
+            { id: 5, name: "USB-C Hub", price: 34.99, image: "img/5.webp", description: "Expand connectivity options." },
+            { id: 6, name: "Laptop Stand", price: 29.99, image: "img/6.jpg", description: "Improve posture and cooling." },
+            { id: 7, name: "Portable SSD", price: 129.99, image: "img/7.webp", description: "Fast and secure storage." },
+            { id: 8, name: "Noise Cancelling Earbuds", price: 89.99, image: "img/8.jpeg", description: "Silence the world." },
+            { id: 9, name: "4K Monitor", price: 299.99, image: "img/9.webp", description: "Ultra-clear visual experience." },
+            { id: 10, name: "Wireless Charger", price: 19.99, image: "img/10.webp", description: "Fast charging without cables." },
+            { id: 11, name: "Fitness Tracker", price: 49.99, image: "img/11.webp", description: "Monitor your activity all day." },
+            { id: 12, name: "Action Camera", price: 159.99, image: "img/12.webp", description: "Capture your adventures." },
+            { id: 13, name: "Smart Light Bulb", price: 14.99, image: "img/13.jpg", description: "Control lights from your phone." }
+        ];
+
+        const productList = document.getElementById("productList");
+        products.forEach(product => {
+            const div = document.createElement("div");
+            div.className = "product";
+            div.innerHTML = `
+            <img src="${product.image}" alt="${product.name}" loading="lazy">
+            <h3>${product.name}</h3>
+            <p>${product.description}</p>
+            <p><strong>$${product.price}</strong></p>
+            <button onclick="buyNow(${product.id})">Buy Now</button>
+        `;
+            productList.appendChild(div);
+        });
+
+        function buyNow(productId) {
+            window.location.href = `checkout.php?product=${productId}`;
+        }
+    </script> -->
+
+    <script>
+    const products = [
+        { id: 1, name: "Smart Watch", price: 99.99, image: "https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?w=600", description: "Track fitness and time in style." },
+        { id: 2, name: "Bluetooth Headphones", price: 79.99, image: "https://images.unsplash.com/photo-1580894732444-8ecded7900cd?w=600", description: "Crystal clear sound without wires." },
+        { id: 3, name: "Wireless Mouse", price: 24.99, image: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=600", description: "Ergonomic and fast response." },
+        { id: 4, name: "Gaming Keyboard", price: 49.99, image: "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?w=600", description: "RGB lighting and responsive keys." },
+        { id: 5, name: "USB-C Hub", price: 34.99, image: "https://images.unsplash.com/photo-1625842268584-8f3296236761?w=600", description: "Expand connectivity options." },
+        { id: 6, name: "Laptop Stand", price: 29.99, image: "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=600", description: "Improve posture and cooling." },
+        { id: 7, name: "Portable SSD", price: 129.99, image: "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=600", description: "Fast and secure storage." },
+        { id: 8, name: "Noise Cancelling Earbuds", price: 89.99, image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", description: "Silence the world." },
+        { id: 9, name: "4K Monitor", price: 299.99, image: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=600", description: "Ultra-clear visual experience." },
+        { id: 10, name: "Wireless Charger", price: 19.99, image: "https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=600", description: "Fast charging without cables." },
+        { id: 11, name: "Fitness Tracker", price: 49.99, image: "https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?w=600", description: "Monitor your activity all day." },
+        { id: 12, name: "Action Camera", price: 159.99, image: "https://images.unsplash.com/photo-1502982720700-bfff97f2ecac?w=600", description: "Capture your adventures." },
+        { id: 13, name: "Smart Light Bulb", price: 14.99, image: "https://images.unsplash.com/photo-1558002038-1055907df827?w=600", description: "Control lights from your phone." }
+    ];
+
+    const productList = document.getElementById("productList");
+    products.forEach(product => {
+        const div = document.createElement("div");
+        div.className = "product";
+        div.innerHTML = `
+            <img src="${product.image}" alt="${product.name}" loading="lazy">
+            <h3>${product.name}</h3>
+            <p>${product.description}</p>
+            <p><strong>$${product.price}</strong></p>
+            <button onclick="buyNow(${product.id})">Buy Now</button>
+        `;
+        productList.appendChild(div);
+    });
+
+    function buyNow(productId) {
+        window.location.href = `checkout.php?product=${productId}`;
+    }
+</script>
+
+</body>
+
+</html>
