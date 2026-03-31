@@ -128,7 +128,7 @@ Use VS Code + Live Server extension for better development experience.
 
 ## 👨‍💻 Author
 
-**NexVerix**  
+**🚀 Built at NexVerix**  
 GitHub: https://github.com/NexVerix
 
 ---
