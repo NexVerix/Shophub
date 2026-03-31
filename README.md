@@ -1,16 +1,16 @@
 # 🛍️ ShopHub - Modern E-commerce Website
 
 <p align="center">
-  <a href="https://github.com/yourusername/shophub/stargazers">
-    <img src="https://img.shields.io/github/stars/yourusername/shophub?style=for-the-badge" />
+  <a href="https://github.com/nexverix/shophub/stargazers">
+    <img src="https://img.shields.io/github/stars/nexverix/shophub?style=for-the-badge" />
   </a>
-  <a href="https://github.com/yourusername/shophub/network/members">
-    <img src="https://img.shields.io/github/forks/yourusername/shophub?style=for-the-badge" />
+  <a href="https://github.com/nexverix/shophub/network/members">
+    <img src="https://img.shields.io/github/forks/nexverix/shophub?style=for-the-badge" />
   </a>
-  <a href="https://github.com/yourusername/shophub/issues">
-    <img src="https://img.shields.io/github/issues/yourusername/shophub?style=for-the-badge" />
+  <a href="https://github.com/nexverix/shophub/issues">
+    <img src="https://img.shields.io/github/issues/nexverix/shophub?style=for-the-badge" />
   </a>
-  <img src="https://img.shields.io/github/license/yourusername/shophub?style=for-the-badge" />
+  <img src="https://img.shields.io/github/license/nexverix/shophub?style=for-the-badge" />
 </p>
 
 <p align="center">
@@ -25,7 +25,7 @@
 ## 🌐 Live Demo
 
 🚀 **View Live Website:**  
-👉 https://Time7874.github.io/Shophub/
+👉 https://nexverix.github.io/Shophub/
 
 ---
 
@@ -128,8 +128,8 @@ Use VS Code + Live Server extension for better development experience.
 
 ## 👨‍💻 Author
 
-**Nova Core**  
-GitHub: https://github.com/Time7874/Shophub.git
+**NexVerix**  
+GitHub: [(https://github.com/NexVerix)]
 
 ---
 
